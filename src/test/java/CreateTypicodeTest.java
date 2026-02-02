@@ -5,6 +5,10 @@ import com.ranjit.harmony.constant.Constant;
 import com.ranjit.harmony.pojo.*;
 import com.ranjit.harmony.steps.InvestmentStep;
 import com.ranjit.harmony.utils.CommonUtil;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.instancio.Instancio;
 import org.instancio.Model;
@@ -38,6 +42,9 @@ public class CreateTypicodeTest {
 
     public static String random;
 
+    @Step("Create user API test")
+    @Story("POST Create User")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void createTypicodeTest() throws JsonProcessingException {
         associatedDrugInput = Instancio.of(associatedDrugModelInput)

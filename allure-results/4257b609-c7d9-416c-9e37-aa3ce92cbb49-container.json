@@ -1,1 +1,0 @@
-{"uuid":"4257b609-c7d9-416c-9e37-aa3ce92cbb49","name":"CreateTypicodeTest","children":["7daba504-2265-432f-96f9-bc108d6f7e78"],"befores":[{"name":"setUpTestData","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1769885238800,"stop":1769885239154}],"afters":[],"start":1769885238729,"stop":1769885243747}

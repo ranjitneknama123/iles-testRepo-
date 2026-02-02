@@ -1,6 +1,7 @@
 package com.ranjit.harmony.client;
 
 import com.ranjit.harmony.endpoints.ApiEndPoints;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
@@ -28,6 +29,7 @@ public class ApiClient {
                 .setBasePath(endPoint)
                 .addHeader("Content-Type", "application/json")
                 .addHeader("Accept", "application/json")
+                .addFilter(new AllureRestAssured())
                 .log(LogDetail.ALL)
                 .build();
     }
