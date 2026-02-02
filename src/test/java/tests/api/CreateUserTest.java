@@ -1,3 +1,5 @@
+package tests.api;
+
 import static io.restassured.RestAssured.*;
 
 import com.fasterxml.jackson.core.JsonProcessingException;

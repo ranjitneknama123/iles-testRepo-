@@ -6,7 +6,7 @@
     </listeners>
     <test name="API tests">
         <classes>
-            <class name="CreateTypicodeTest">
+            <class name="api.CreateTypicodeTest">
             </class>
         </classes>
     </test>

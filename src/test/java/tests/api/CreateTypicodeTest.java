@@ -1,3 +1,5 @@
+package tests.api;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ranjit.harmony.client.ApiClient;
@@ -20,11 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static com.ranjit.harmony.endpoints.ApiEndPoints.endPoint;
 import static com.ranjit.harmony.model.ModelProvider.associateDrug2ModelProvider;
 import static com.ranjit.harmony.model.ModelProvider.associateDrugModelProvider;
 import static org.hamcrest.Matchers.lessThan;
-import static org.instancio.Select.field;
 
 public class CreateTypicodeTest {
     private static InvestmentStep investmentStep = new InvestmentStep();
