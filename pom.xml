@@ -133,6 +133,12 @@
                             ${project.build.directory}/allure-results
                         </allure.results.directory>
                     </systemPropertyVariables>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                   <!-- <includes>
+                        <include>**/*Runner.java</include>
+                    </includes>-->
                 </configuration>
             </plugin>
             <plugin>

@@ -25,7 +25,7 @@ public class ApiClient {
     public static RequestSpecification requestSpec() {
 
         return new RequestSpecBuilder()
-                .setBaseUri(base_path)
+                //.setBaseUri(base_path)
                 .setBasePath(endPoint)
                 .addHeader("Content-Type", "application/json")
                 .addHeader("Accept", "application/json")

@@ -6,8 +6,13 @@
     </listeners>
     <test name="API tests">
         <classes>
-            <class name="api.CreateTypicodeTest">
+            <class name="tests.api.CreateTypicodeTest">
             </class>
+        </classes>
+    </test>
+    <test name="cucumber test cases">
+        <classes>
+            <class name="runners.TestRunner"></class>
         </classes>
     </test>
 </suite>
