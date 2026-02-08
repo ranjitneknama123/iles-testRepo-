@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.ranjit.harmony.utils.ConfigReader;
 import com.ranjit.harmony.utils.DriverFactory;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.it.Data;
 import io.cucumber.java.it.Ma;
+import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.LoginPage;
@@ -16,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 public class LoginSteps {
+    SoftAssertions softly = new SoftAssertions();
 
     WebDriver driver;
     LoginPage loginPage;
@@ -23,7 +26,7 @@ public class LoginSteps {
     @Given("user is on login page")
     public void user_is_on_login_page() {
         driver = DriverFactory.getDriver();
-        driver.get("https://www.saucedemo.com/");
+        driver.get(ConfigReader.get("base.url"));
         loginPage = new LoginPage(driver);
     }
 
@@ -31,6 +34,9 @@ public class LoginSteps {
     public void user_enters_username_and_password(String username, String password) {
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
+        //Assert.assertEquals("abc","xyz");
+        softly.assertThat(driver.getTitle()).as("page title").isEqualTo("Swag Labs");
+        softly.assertAll();
     }
 
     @And("clicks login button")

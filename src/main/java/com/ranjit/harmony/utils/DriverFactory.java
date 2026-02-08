@@ -3,6 +3,8 @@ package com.ranjit.harmony.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
@@ -10,25 +12,26 @@ public class DriverFactory {
 
     public static WebDriver getDriver() {
         if (driver.get() == null) {
-            ChromeOptions options = new ChromeOptions();
+            String browser = System.getProperty("browser", "chrome");
 
-            // Jenkins / CI detection
-            if (System.getenv("JENKINS_HOME") != null ||
-                    "true".equalsIgnoreCase(System.getProperty("headless"))) {
-
-                options.addArguments("--headless=new");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--window-size=1920,1080");
+            switch (browser.toLowerCase()) {
+                case "firefox":
+                    driver.set(new FirefoxDriver());
+                    break;
+                case "edge":
+                    driver.set(new EdgeDriver());
+                    break;
+                default:
+                    driver.set(new ChromeDriver());
             }
 
-            driver.set(new ChromeDriver(options));
-            driver.get().manage().window().maximize();
+            getDriver().manage().window().maximize();
         }
         return driver.get();
     }
 
     public static void quitDriver() {
-        if (driver != null) {
+        if (driver.get() != null) {
             driver.get().quit();
             driver.remove();
         }

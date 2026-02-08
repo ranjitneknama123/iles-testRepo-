@@ -132,6 +132,8 @@
                         <allure.results.directory>
                             ${project.build.directory}/allure-results
                         </allure.results.directory>
+                        <browser>${browser}</browser>
+                        <env>${env}</env>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
