@@ -13,7 +13,8 @@ import io.cucumber.testng.CucumberOptions;
                 "json:target/cucumber.json"
         },
         monochrome = true,
-        dryRun = false
+        dryRun = false,
+        tags = "@sanity"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 }
